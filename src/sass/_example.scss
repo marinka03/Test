@@ -26,78 +26,135 @@
 //   background-size: cover;
 //   background-position: center;
 // }
+*{
+  box-sizing: border-box;
+}
 body{
   display: block;
   
+  
 }
-.game-section{
-  background-color: #d9ed92;
-  padding: 50px 0;
-  height: 400px;
+// .game-section{
+//   background-color: #d9ed92;
+//   padding: 50px 0;
+//   height: 400px;
 
-  &-btn{
-    display: block;
-    width: 100px;
-    height: 40px;
-    font-size: x-large;
-    cursor: pointer;
-    background-color: #70e000;
-    color: #004b23;
-    border-radius: 5px;
-    border-color: #004b23;
-    margin: 0 auto;
-    &:hover,
-    &:focus{
-      background-color: #38b000;
-    }
-  }
+//   &-btn{
+//     display: block;
+//     width: 100px;
+//     height: 40px;
+//     font-size: x-large;
+//     cursor: pointer;
+//     background-color: #70e000;
+//     color: #004b23;
+//     border-radius: 5px;
+//     border-color: #004b23;
+//     margin: 0 auto;
+//     &:hover,
+//     &:focus{
+//       background-color: #38b000;
+//     }
+//   }
 
-  &-wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    margin-top: 20px;
-  }
-  &-item{
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-    outline:auto;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 50px;
-  }
-  &-text{
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 400;
-    font-size: x-large;
-    margin-left: 50px;
-  }
-}
+//   &-wrapper{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     gap: 5px;
+//     margin-top: 20px;
+//   }
+//   &-item{
+//     width: 50px;
+//     height: 50px;
+//     border: 1px solid black;
+//     outline:auto;
+//     text-align: center;
+//     vertical-align: middle;
+//     line-height: 50px;
+//   }
+//   &-text{
+//     font-family: 'Courier New', Courier, monospace;
+//     font-weight: 400;
+//     font-size: x-large;
+//     margin-left: 50px;
+//   }
+// }
 
 // -------------------------------------
-.time-section{
-  height: 700px;
-  background-color: #76c893;
-  padding: 50px 0;
+// .time-section{
+//   height: 700px;
+//   background-color: #76c893;
+//   padding: 50px 0;
+// }
+// .time-box{
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+// .time-text{
+//   margin: 0;
+//   font-family: 'Courier New', Courier, monospace;
+//   font-weight: 400;
+//   font-size: x-large;
+// }
+// .box{
+//   width: 200px;
+//   height: 200px;
+//   border: 1px dotted black;
+//   // outline:auto;
+//   text-align: center;
+//   vertical-align: middle;
+// }
+// -----------------------------------
+header{
+  width: 100%;
+  height: 75px;
+  background-color:antiquewhite;
 }
-.time-box{
+.search-form{
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
-.time-text{
-  margin: 0;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: 400;
-  font-size: x-large;
+.car-section{
+  background-color: #7693c8;
+  padding: 50px 0;
+  width: 100%;
+  height: 100%;
+  // width: 100%;
+  // height: 500px;
 }
+.car-list{
+  list-style: none;
+  font-family: serif;
+  // margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.item{
+  background-color: antiquewhite;
+  width: 704px;
+  min-height: 500px;
+  margin-top: 30px;
+  border: 2px solid grey;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.img-car{
+  cursor: pointer;
+}
+// ----------------------------
 .box{
-  width: 200px;
-  height: 200px;
-  border: 1px dotted black;
-  // outline:auto;
-  text-align: center;
-  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  background-color: #38b000;
+  cursor: pointer;
+}
+.hidden{
+  overflow: hidden;
+  display: none;
 }

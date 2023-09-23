@@ -1,31 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test</title>
-  <link rel="stylesheet" href="./sass/index.scss" />
-  <script type="module" src="./index.js"></script>
-</head>
-<body>
-  <section class="game-section">
-    <button type="button" class="game-section-btn">Start</button>
-    <div class="game-section-wrapper js-container">
-      <div class="game-section-item"></div>
-      <div class="game-section-item"></div>
-      <div class="game-section-item"></div>
-    </div>
-    <p class="game-section-text">Start this game 🤯🔥🔥🔥</p>
-  </section>
-  <section class="time-section">
-    <div class="time-box">
-      <p class="time-text">Time :</p>
-      <div class="box"></div>
-    </div>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <link rel="stylesheet" href="./sass/index.scss" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <!-- <section class="game-section">
+      <button type="button" class="game-section-btn">Start</button>
+      <div class="game-section-wrapper js-container">
+        <div class="game-section-item"></div>
+        <div class="game-section-item"></div>
+        <div class="game-section-item"></div>
+      </div>
+      <p class="game-section-text">Start this game 🤯🔥🔥🔥</p>
+    </section> -->
 
-  </section>
-  <include src="./partials/example.html"></include>
-</body>
+    <!-- <section class="time-section">
+      <div class="time-box">
+        <p class="time-text">Time :</p>
+        <div class="box"></div>
+      </div>
+    </section> -->
+    <header></header>
+    <section class="js-car-section car-section">
+      <!-- <ul class="js-text-list">
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+          itaque autem eius, ex perferendis sit laudantium provident ea, illum,
+          possimus expedita unde quam ut atque praesentium corrupti? Magni, nam!
+          Quas?
+        </li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+          itaque autem eius, ex perferendis sit laudantium provident ea, illum,
+          possimus expedita unde quam ut atque praesentium corrupti? Magni, nam!
+          Quas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+          itaque autem eius, ex perferendis sit laudantium provident ea, illum,
+          possimus expedita unde quam ut atque praesentium corrupti? Magni, nam!
+          Quas?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+          itaque autem eius, ex perferendis sit laudantium provident ea, illum,
+          possimus expedita unde quam ut atque praesentium corrupti? Magni, nam!
+          Quas?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+          itaque autem eius?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+          itaque autem eius, ex perferendis sit laudantium provident ea, illum.</li>
+      </ul> -->
+
+      <!-- <button type="button" class="js-btn btn">Click me!</button>
+      <div class="js-box box hidden"></div> -->
+
+      <form action="submit" class="js-search-form search-form">
+        <input type="text" name="qwery" />
+        <select name="typeSelect">
+          <!-- вел'ю має відповідати ключю з об'єкта -->
+          <option value="type">Type</option>
+          <option value="model">Model</option>
+        </select>
+        <button>Search 🔎</button>
+      </form>
+      <ul class="js-car-list car-list"></ul>
+    </section>
+    <include src="./partials/example.html"></include>
+
+  </body>
 </html>
