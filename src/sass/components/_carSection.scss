@@ -1,0 +1,129 @@
+main {
+  background-color: #f6f6f6;
+  width: 100%;
+}
+.background-height {
+  height: 100vh;
+}
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.form-input {
+  width: 520px;
+  height: 25px;
+  outline-color: #063e41;
+}
+.car-section {
+  padding: 50px 0;
+}
+.car-list {
+  list-style: none;
+  font-family: serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0;
+  margin: 0;
+}
+// .car-list:not(:first-child){
+//   // margin: 0;
+//   margin-top: 30px;
+// }
+.item {
+  background-color: antiquewhite;
+  margin-top: 30px;
+  border: 2px solid #063e41;
+  border-radius: 4px;
+  user-select: none;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+.car-name {
+  display: inline-block;
+  position: relative;
+  padding: 0 8px 0 8px;
+}
+.car-name::before {
+  content: '';
+  height: 2px;
+  width: 70px;
+  bottom: 10px;
+  left: 5em;
+  z-index: 1;
+  background-color: cadetblue;
+  display: block;
+  position: absolute;
+}
+.car-name::after {
+  content: '';
+  height: 2px;
+  width: 70px;
+  bottom: 10px;
+  right: 5em;
+  background-color: cadetblue;
+  display: block;
+  position: absolute;
+
+  //   @media (min-width: 375px) {
+  //     right: 20px;
+  //   }
+
+  //   @media (min-width: 768px) {
+  //     right: 70px;
+  //   }
+
+  //   @media (min-width: 1440px) {
+  //     right: 120px;
+  //   }
+}
+.all-btns-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.more-info{
+  font-size: 18px;
+  font-weight: 600;
+  // color: darkcyan;
+  padding: 5px;
+  cursor: pointer;
+}
+.more-info:hover{
+  box-shadow: rgb(33 35 38 / 10%) 0px 10px 10px -10px;
+  color: #aa0606;
+}
+.add-btns {
+  display: flex;
+  gap: 33px;
+}
+.wrapper-more-description {
+  text-align: start;
+}
+
+// ----------------------------
+// .box {
+//   width: 100px;
+//   height: 100px;
+//   background-color: #38b000;
+//   cursor: pointer;
+// }
+.hidden {
+  overflow: hidden;
+  display: none;
+}
+
+.basicLightbox__placeholder {
+  height: auto;
+  padding: 15px;
+  text-align: center;
+  background-color: #faebd7;
+  border: 2px solid #063e41;
+  border-radius: 4px;
+  user-select: none;
+}

@@ -1,0 +1,76 @@
+body {
+    font-family: 'DM Sans';
+    margin: 0;
+  }
+  .noscroll {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+  }
+  .link {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+    fill: inherit;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+    z-index: 0;
+  }
+  
+  .hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+    z-index: 0;
+  }
+  
+//   .side-bar-container {
+//     margin: 0 auto;
+//     flex-direction: column;
+//     @include tablet {
+//       display: flex;
+//       gap: 32px;
+//       flex-direction: row;
+//       padding-top: 40px;
+//     }
+//     @include pc {
+//       flex-direction: column;
+//       padding-top: 0px;
+//     }
+//   }
+  
+//   .global-container {
+//     flex-direction: column;
+//     @include tablet {
+//       display: flex;
+//     }
+  
+//     @include pc {
+//       display: flex;
+//       flex-direction: row;
+//     }
+//   }

@@ -1,8 +1,6 @@
 // FIRST SECTION
 
 // import Notiflix from 'notiflix';
-// const basicLightbox = require('basiclightbox')
-// import * as basicLightbox from 'basiclightbox';
 
 // const start = document.querySelector('.game-section-btn');
 // const container = document.querySelector('.js-container');
@@ -55,110 +53,44 @@
 // SECOND SECTION
 
 // THIRD SECTION----------------------------------------------------------------------
-const carArr = [
-  {
-    id: 1,
-    img: 'https://auto.24tv.ua/resources/photos/tag/700x372_DIR/201910/2241c58878d8-6a11-4b0c-a999-410284db134a.png?1572008337000',
-    model: 'Scala',
-    type: 'Skoda',
-    year: 2019,
-    price: 25000,
-  },
-  {
-    id: 2,
-    img: 'https://auto.24tv.ua/resources/photos/tag/700x372_DIR/201902/1835d3d537f7-e4f2-4d18-909e-bd888e35b447.png?1572008566000',
-    model: 'RAV4 Hybrid',
-    type: 'Toyota',
-    year: 2018,
-    price: 35000,
-  },
-  {
-    id: 3,
-    img: 'https://auto.24tv.ua/resources/photos/tag/700x372_DIR/201902/183386a81d1d-678f-4768-924a-368fb06345a7.png?1572008531000',
-    model: 'Vitara',
-    type: 'Suzuki',
-    year: 2018,
-    price: 22000,
-  },
-  {
-    id: 4,
-    img: 'https://auto.24tv.ua/resources/photos/tag/700x372_DIR/201808/598d2c6464f-4325-440b-a000-591f2fe1683e.png?1550505538000',
-    model: 'C3',
-    type: 'Citroen',
-    year: 2019,
-    price: 15000,
-  },
-  {
-    id: 5,
-    img: 'https://auto.24tv.ua/resources/photos/tag/700x372_DIR/201910/2225a8013ece-b524-4329-ab14-548b58582d3c.png?1572008012000',
-    model: 'Taycan',
-    type: 'Porsche',
-    year: 2019,
-    price: 150000,
-  },
-  {
-    id: 6,
-    img: 'https://auto.24tv.ua/resources/photos/tag/700x372_DIR/201808/635ff3df75b-81b2-4db8-8542-177d652c183a.png?1550515471000',
-    model: 'CX-5',
-    type: 'Mazda',
-    year: 2017,
-    price: 30000,
-  },
-];
 
+import { carArr } from './cars';
+import { common } from './common';
+import { createMarkup } from './helpers/create-markup-card';
+import { createModal } from './helpers/create-modal';
+import { findProduct } from './helpers/find-product';
+
+// const section = document.querySelector('.section');
 const form = document.querySelector('.js-search-form');
 const carList = document.querySelector('.js-car-list');
 form.addEventListener('submit', onSearch);
-
-//  beginer murkup
-(function () {
-  const murkup = carArr.map(
-    ({ id, img, type }) => `<li class="js-item item" data-car-id=${id}>
-    <img src=${img} alt=${type} class="js-target img-car">
-    <h2>${type}</h2>
-    </li>`
-  );
-  carList.insertAdjacentHTML('beforeend', murkup.join(''));
-})();
-
 carList.addEventListener('click', onClickEl);
+
+createMarkup(carList, carArr);
+
+const arrFavourite = JSON.parse(localStorage.getItem(common.arrFavourite)) ?? [];
+const arrCheckOut = JSON.parse(localStorage.getItem(common.arrCheckOut)) ?? [];
+
 function onClickEl(evt) {
-  if (!evt.target.classList.contains('js-target')) {
-    return;
+  evt.preventDefault();
+
+  if (evt.target.classList.contains('js-more-info')) {
+    const currentProduct = findProduct(evt.target)
+    createModal(currentProduct)
+
+  }else if(evt.target.classList.contains('js-favourite-btn')){
+    const currentProduct = findProduct(evt.target);
+    const inFavourite = arrFavourite.some(({id}) => id === currentProduct.id);
+
+    if(inFavourite){
+      return;
+    }
+    arrFavourite.push(currentProduct);
+    localStorage.setItem(common.arrFavourite, JSON.stringify(arrFavourite))
   }
-  const currentCard = evt.target.closest('.js-item');
-  const carId = Number(currentCard.dataset.carId);
-  const fullInfoItem = carArr.find(({ id }) => id === carId);
-
-  const instance = basicLightbox.create(`
-  <div class="modal">
-      <p>
-          Your first lightbox with just a few lines of code.
-          Yes, it's really that simple.
-      </p>
-  </div>
-`);
-
-  instance.show(() => console.log('lightbox now visible'));
-  console.log(fullInfoItem);
 }
 
-function createMurkup(arr) {
-  const murkup = arr
-    .map(
-      ({ id, img, model, type, year, price }) => `
-      <li class="item" data-car-id=${id}>
-      <img src=${img} alt=${type}>
-      <h2>${type}</h2>
-      <h3>${model}</h3>
-      <h3>${year}</h3>
-      <p>Price: ${price}$</p>
-      </li>`
-    )
-    .join('');
-  return murkup;
-}
-// carList.insertAdjacentHTML('beforeend', createMurkup(carArr));
+const mainEl = document.querySelector('main');
 
 function onSearch(evt) {
   evt.preventDefault();
@@ -166,33 +98,12 @@ function onSearch(evt) {
   const result = carArr.filter(item =>
     item[typeSelect.value].toLowerCase().includes(qwery.value.toLowerCase())
   );
-  //   console.dir(result);
-  carList.innerHTML = createMurkup(result);
+
+  result.length <= 1
+    ? mainEl.classList.add('background-height')
+    : mainEl.classList.remove('background-height');
+    createMarkup( carList, result);
 }
-
-// const carList = document.querySelector('.js-car-list');
-// console.dir(carList);
-// const murkup = carArr
-//   .map(
-//     ({ id, img, model, type, year, price }) => `
-// <li class="item" data-car-id=${id}>
-// <img src=${img} alt=${type}>
-// <h2>${type}</h2>
-// <h3>${model}</h3>
-// <h3>${year}</h3>
-// <p>Price: ${price}$</p>
-// </li>`
-//   )
-//   .join('');
-// carList.insertAdjacentHTML('beforeend', murkup);
-
-// carList.addEventListener('click', onClick);
-// function onClick(evt) {
-//   const parent = evt.target.closest('li');
-//   console.dir(parent);
-//   const id = parent.dataset.carId;
-//   console.log(id);
-// }
 
 // -----------------------------------------------------------------------------------
 // const textList = document.querySelector('.js-text-list');

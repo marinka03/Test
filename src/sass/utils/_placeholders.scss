@@ -1,0 +1,18 @@
+// Плейсхолдер (placeholder) - довільне ім'я селектора з обов' язковим символом % на початку.
+//  Виклик плейсхолдера відбувається за допомогою директиви @extend всередині селектора.
+
+//   Приклад оголошення плейсхолдера і подальшого виклику:
+// %link {
+//     text-decoration: none;
+//     color: currentColor;
+// }
+
+// a {
+//     @extend %link;
+// }
+
+%flex-centred {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

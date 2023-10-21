@@ -1,2 +1,11 @@
-@import './common';
-@import './example';
+@import './utils/mixins';
+@import './utils/placeholders';
+@import './utils/variables';
+
+@import './base/base';
+@import './base/reset';
+
+@import './layouts/container';
+
+@import './components/header';
+@import './components/carSection';

@@ -1,0 +1,68 @@
+const carArr = [
+    {
+      id: 1,
+      img: 'https://auto.24tv.ua/resources/photos/tag/700x372_DIR/201910/2241c58878d8-6a11-4b0c-a999-410284db134a.png?1572008337000',
+      model: 'Scala',
+      type: 'Skoda',
+      year: 2019,
+      price: 25000,
+    },
+    {
+      id: 2,
+      img: 'https://auto.24tv.ua/resources/photos/tag/700x372_DIR/201902/1835d3d537f7-e4f2-4d18-909e-bd888e35b447.png?1572008566000',
+      model: 'RAV4 Hybrid',
+      type: 'Toyota',
+      year: 2018,
+      price: 35000,
+    },
+    {
+      id: 3,
+      img: 'https://auto.24tv.ua/resources/photos/tag/700x372_DIR/201902/183386a81d1d-678f-4768-924a-368fb06345a7.png?1572008531000',
+      model: 'Vitara',
+      type: 'Suzuki',
+      year: 2018,
+      price: 22000,
+    },
+    {
+      id: 4,
+      img: 'https://auto.24tv.ua/resources/photos/tag/700x372_DIR/201808/598d2c6464f-4325-440b-a000-591f2fe1683e.png?1550505538000',
+      model: 'C3',
+      type: 'Citroen',
+      year: 2019,
+      price: 15000,
+    },
+    {
+      id: 5,
+      img: 'https://auto.24tv.ua/resources/photos/tag/700x372_DIR/201910/2225a8013ece-b524-4329-ab14-548b58582d3c.png?1572008012000',
+      model: 'Taycan',
+      type: 'Porsche',
+      year: 2019,
+      price: 150000,
+    },
+    {
+      id: 6,
+      img: 'https://auto.24tv.ua/resources/photos/tag/700x372_DIR/201808/635ff3df75b-81b2-4db8-8542-177d652c183a.png?1550515471000',
+      model: 'CX-5',
+      type: 'Mazda',
+      year: 2017,
+      price: 30000,
+    },
+    {
+      id: 7,
+      img: 'https://auto.24tv.ua/resources/photos/tag/700x372_DIR/201910/218592567a66-bcd6-4e85-b3c9-1d268a8861a6.png?1572006874000',
+      model: 'Mazda3 Hatchback',
+      type: 'Mazda',
+      year: 2019,
+      price: 25200,
+    },
+    {
+      id: 8,
+      img: 'https://auto.24tv.ua/resources/photos/tag/700x372_DIR/201910/218631ac3b4a-80de-481b-ba64-0dee8ed7d82b.png?1572006840000',
+      model: 'Mazda3 Sedan',
+      type: 'Mazda',
+      year: 2019,
+      price: 24800,
+    },
+  ]
+
+  export {carArr};
